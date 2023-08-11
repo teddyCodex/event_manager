@@ -67,6 +67,14 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
+  const params = new URLSearchParams(window.location.search);
+  const guestName = params.get("guest_name");
+
+  // Populate the search input box with guest name
+  if (guestName) {
+    searchInput.value = guestName;
+  }
+
   // Function to scroll to the position of a guest name in the guest list
   function scrollToGuest(guestName) {
     const targetElement = [...guestList.children].find((li) =>
@@ -81,12 +89,5 @@ document.addEventListener("DOMContentLoaded", function () {
         targetElement.classList.remove("highlighted");
       }, 3000);
     }
-  }
-  const params = new URLSearchParams(window.location.search);
-  const guestName = params.get("guest_name");
-
-  // Populate the search input box with guest name
-  if (guestName) {
-    searchInput.value = guestName;
   }
 });
