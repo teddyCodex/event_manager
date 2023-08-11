@@ -3,6 +3,15 @@ document.addEventListener("DOMContentLoaded", function () {
   const suggestionList = document.getElementById("suggestionList");
   const guestList = document.getElementById("guestList");
   let data = null; // Store guest data fetched from the server
+  let selectedSuggestion = null; // Store the selected suggestion
+
+  // Event listener for search button click
+  const searchButton = document.getElementById("searchButton");
+  searchButton.addEventListener("click", function () {
+    const inputValue = searchInput.value.trim();
+    suggestionList.style.display = "none"; // Hide suggestion list
+    scrollToGuest(inputValue); // Scroll to the searched guest
+  });
 
   // Fetch and display the guest list on page load
   async function fetchGuestList() {
@@ -46,11 +55,19 @@ document.addEventListener("DOMContentLoaded", function () {
       suggestionItem.addEventListener("click", () => {
         searchInput.value = guest.guest_name;
         suggestionList.style.display = "none";
-        scrollToGuest(guest.guest_name);
+        // scrollToGuest(guest.guest_name);
       });
       suggestionList.appendChild(suggestionItem);
     });
   }
+
+  // Event listener for suggestion click
+  // suggestionList.addEventListener("click", function (event) {
+  //   if (event.target.tagName === "LI") {
+  //     selectedSuggestion = event.target.textContent;
+  //     searchInput.value = selectedSuggestion;
+  //   }
+  // });
 
   // Event listener for search input
   searchInput.addEventListener("input", function () {
@@ -82,7 +99,6 @@ document.addEventListener("DOMContentLoaded", function () {
     );
 
     if (targetElement) {
-      // SmoothScroll(targetElement, { duration: 1000, easing: "easeInOutCubic" });
       targetElement.scrollIntoView({ behavior: "auto", block: "start" });
       targetElement.classList.add("highlighted");
 
