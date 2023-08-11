@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (targetElement) {
       SmoothScroll(targetElement, { duration: 1000, easing: "easeInOutCubic" });
-      // targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
+      targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
       targetElement.classList.add("highlighted");
 
       setTimeout(() => {
