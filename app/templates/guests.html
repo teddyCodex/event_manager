@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Guest List</title>
+  </head>
+  <body>
+    <h1>Guest List</h1>
+    <ul>
+      {% for guest in guests %}
+      <li>
+        {{ guest.guest_id }} - {{ guest.guest_name }} - {{ guest.status }}
+      </li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>

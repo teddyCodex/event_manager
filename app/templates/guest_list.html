@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guest List</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='guest_list.css') }}"
+    />
+  </head>
+  <body>
+    <h1>Guest List</h1>
+
+    <!-- Search Input and Suggestion Dropdown -->
+    <div class="search-container">
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Search for guest names..."
+      />
+      <ul class="suggestion-list" id="suggestionList"></ul>
+    </div>
+
+    <ul class="guest-list" id="guestList"></ul>
+
+    <script src="{{ url_for('static', filename='guest_list.js') }}"></script>
+  </body>
+</html>

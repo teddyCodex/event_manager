@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@1,300&display=swap");
+h1 {
+  text-align: center;
+  padding: 20px;
+  color: #71dfbe;
+}
+form {
+  max-width: 500px;
+  margin: 0 auto;
+  background: #2b2d2f;
+  padding: 40px 40px 20px 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+label {
+  display: block;
+  margin-bottom: 8px;
+  margin-right: 5px;
+  color: #71dfbe;
+}
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+button[type="submit"] {
+  width: 150px;
+  background: #2b2d2f;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 4px;
+  margin: 10px 10px 10px 0;
+  padding: 15px 30px;
+  font-size: 16px;
+  font-family: "Lilita One", cursive;
+  color: #71dfbe;
+  transition: background-color 0.3s;
+}
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+input[type="file"] {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 16px;
+  color: #ccc;
+}
+
+input[type="file"]::before {
+  content: "No file chosen";
+  font-size: 12px;
+  color: #ccc;
+}
+
+input[type="file"]:not(:placeholder-shown)::before {
+  content: attr(data-text);
+  color: #ccc;
+}
+
+form.upload {
+  margin-top: 50px;
+}
+form.upload label {
+  margin-bottom: 10px;
+}
+p {
+  font-family: "Ubuntu", sans-serif;
+  color: #ccc;
+}
+p a {
+  color: #ccc;
+}
+p a.clicked {
+  color: aqua;
+}
+.upload-wrapper {
+  display: flex;
+  align-items: center;
+}
+/* .info-icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-bottom: 10px;
+} */
+svg {
+  height: 20px;
+  color: #71dfbe;
+}
+/* .tooltip {
+  display: none;
+  position: absolute;
+  background-color: #000;
+  color: #fff;
+  padding: 8px;
+  border-radius: 4px;
+  font-size: 14px;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.tooltip.show {
+  display: block;
+} */
+/* Inside your CSS file, such as style.css */
+.tooltip-container {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 5px;
+}
+
+.info-icon {
+  width: 20px;
+  height: 20px;
+  fill: #999;
+  cursor: pointer;
+}
+
+.tooltip-text {
+  visibility: hidden;
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: 5px;
+  border-radius: 3px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  white-space: nowrap;
+}
+
+.tooltip-container:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+span {
+  margin-bottom: 10px;
+}

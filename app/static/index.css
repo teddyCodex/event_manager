@@ -1,0 +1,64 @@
+/* Default styles for all screen sizes */
+body {
+  display: flex;
+}
+.buttons {
+  text-align: center;
+  display: flex;
+  flex-direction: row; /* Default: flex left to right */
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.button {
+  width: 200px;
+  background: #2b2d2f;
+  /* text-align: center; */
+  cursor: pointer;
+  border-radius: 4px;
+  margin: 10px;
+  padding: 15px 30px;
+  font-size: 18px;
+  /* color: #fff; */
+  transition: background-color 0.3s;
+}
+
+button {
+  width: 250px;
+  background: #2b2d2f;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 4px;
+  margin: 10px;
+  padding: 15px 30px;
+  font-family: "Lilita One", cursive;
+  font-size: 20px;
+  color: #a084e8;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.text {
+  color: #71dfbe;
+  text-decoration: none;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}
+
+/* Media query for smaller screens (up to 840px) */
+@media (max-width: 840px) {
+  .buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Adjust font size for smaller screens */
+  .text {
+    font-size: 1rem;
+  }
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Add Guests</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='add_guest.css') }}"
+    />
+  </head>
+  <body>
+    <h1>Add Guests</h1>
+
+    <!-- Form for manual entry -->
+    <form method="post" class="manual">
+      <label for="guest_name">Guest Name:</label>
+      <input type="text" id="guest_name" name="guest_name" required />
+      <button type="submit" id="add_guest">Add Guest</button>
+    </form>
+
+    <!-- Form for file upload -->
+    <form
+      method="post"
+      id="txtForm"
+      enctype="multipart/form-data"
+      class="upload"
+    >
+      <div class="upload-wrapper">
+        <label for="txt_file">Upload Text File:</label>
+        <div class="tooltip-container">
+          <svg
+            class="info-icon"
+            id="info-icon-manual"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 256 256"
+          >
+            <rect width="256" height="256" fill="none" />
+            <circle cx="128" cy="128" r="96" opacity="0.2" />
+            <path
+              d="M120,120a8,8,0,0,1,8,8v40a8,8,0,0,0,8,8"
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="16"
+            />
+            <circle
+              cx="128"
+              cy="128"
+              r="96"
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="16"
+            />
+            <circle cx="124" cy="84" r="12" fill="#71dfbe" />
+          </svg>
+          <span class="tooltip-text tooltip-text-manual">
+            Please upload a text file with first and last names separated by
+            spaces.
+          </span>
+        </div>
+      </div>
+      <input type="file" id="txt_file" name="txt_file" accept=".txt" required />
+      <button type="submit" id="uploadCsvButton">Upload File</button>
+
+      <!-- Link to download template -->
+      <p>
+        <a class="download_link" href="{{ url_for('download_template') }}"
+          >Download Blank Template</a
+        >
+      </p>
+    </form>
+
+    <script src="{{ url_for('static', filename='add_guests.js') }}"></script>
+  </body>
+</html>
