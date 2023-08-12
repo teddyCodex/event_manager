@@ -1,7 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Fascinate+Inline&family=Ubuntu:ital,wght@1,300&display=swap");
 /* Default styles for all screen sizes */
+
 body {
   display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 50px;
+  justify-content: flex-start;
 }
+h1 {
+  font-family: "Fascinate Inline", cursive;
+  font-size: 10vw;
+  color: #111;
+}
+
 .buttons {
   text-align: center;
   display: flex;
@@ -13,13 +25,11 @@ body {
 .button {
   width: 200px;
   background: #2b2d2f;
-  /* text-align: center; */
   cursor: pointer;
   border-radius: 4px;
   margin: 10px;
   padding: 15px 30px;
   font-size: 18px;
-  /* color: #fff; */
   transition: background-color 0.3s;
 }
 
@@ -50,15 +60,10 @@ button:hover {
   background-color: #0056b3;
 }
 
-/* Media query for smaller screens (up to 840px) */
-@media (max-width: 840px) {
+/* Media query for smaller screens (up to 800px) */
+@media (max-width: 800px) {
   .buttons {
     flex-direction: column;
     align-items: center;
-  }
-
-  /* Adjust font size for smaller screens */
-  .text {
-    font-size: 1rem;
   }
 }
