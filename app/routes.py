@@ -142,6 +142,7 @@ def verify_guest_manual():
 @app.route("/actual_guest_list")
 def actual_guest_list():
     guest_name = request.args.get("guest_name")
+    print(f"Guest Name in actual_guest_list: {guest_name}")
     return render_template("guest_list.html", guest_name=guest_name)
 
 
@@ -152,7 +153,7 @@ def guest_list():
     guest_name = request.args.get(
         "guest_name"
     )  # Get the guest name from the URL parameters
-
+    print(f"Guest Name in guest_list: {guest_name}")
     if request.method == "POST":
         entered_password = request.form["password"]
         if entered_password == correct_password:
