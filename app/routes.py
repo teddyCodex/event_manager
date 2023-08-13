@@ -143,11 +143,15 @@ def verify_guest_manual():
 def guest_list():
     # Hardcoded password for demonstration purposes (You can replace it with a more secure method)
     correct_password = "Emengini"
+    guest_name = request.args.get(
+        "guest_name"
+    )  # Get the guest name from the URL parameters
 
     if request.method == "POST":
         entered_password = request.form["password"]
         if entered_password == correct_password:
-            return render_template("guest_list.html")
+            # return render_template("guest_list.html")
+            return redirect(url_for("guest_list", guest_name=guest_name))
         else:
             return render_template(
                 "protected_page.html",
