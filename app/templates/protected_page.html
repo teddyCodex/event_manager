@@ -21,5 +21,10 @@
     {% if error_message %}
     <p class="error">{{ error_message }}</p>
     {% endif %}
+    <script>
+      const urlParams = new URLSearchParams(window.location.search);
+      const guestName = urlParams.get("guest_name");
+      sessionStorage.setItem("guestName", guestName);
+    </script>
   </body>
 </html>
