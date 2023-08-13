@@ -78,7 +78,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // const params = new URLSearchParams(window.location.search);
   // const guestName = params.get("guest_name");
-  const guestName = "{{ guest_name }}";
 
   // Populate the search input box with guest name
   if (guestName) {

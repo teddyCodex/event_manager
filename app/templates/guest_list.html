@@ -26,6 +26,9 @@
     </div>
     <button class="buttons" id="searchButton">Search</button>
     <ul class="guest-list" id="guestList"></ul>
+    <script>
+      const guestName = "{{ guest_name or '' }}"; // Using the 'or' operator to handle the case when guest_name is None
+    </script>
     <script src="{{ url_for('static', filename='guest_list.js') }}"></script>
   </body>
 </html>
