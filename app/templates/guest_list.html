@@ -28,6 +28,10 @@
     <ul class="guest-list" id="guestList"></ul>
     <script>
       const guestName = "{{ guest_name or '' }}"; // Using the 'or' operator to handle the case when guest_name is None
+      if (guestName) {
+        const searchInput = document.getElementById("searchInput"); // Replace with the correct input element's ID
+        searchInput.value = guestName;
+      }
     </script>
     <script src="{{ url_for('static', filename='guest_list.js') }}"></script>
   </body>
