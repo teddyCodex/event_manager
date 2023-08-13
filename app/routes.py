@@ -141,7 +141,8 @@ def verify_guest_manual():
 # ------------------------------VIEW GUEST LIST---------------------------------------#
 @app.route("/actual_guest_list")
 def actual_guest_list():
-    return render_template("guest_list.html")
+    guest_name = request.args.get("guest_name")
+    return render_template("guest_list.html", guest_name=guest_name)
 
 
 @app.route("/guest_list", methods=["GET", "POST"])
@@ -155,7 +156,6 @@ def guest_list():
     if request.method == "POST":
         entered_password = request.form["password"]
         if entered_password == correct_password:
-            # return render_template("guest_list.html", guest_name=guest_name)
             return redirect(url_for("actual_guest_list", guest_name=guest_name))
         else:
             return render_template(
