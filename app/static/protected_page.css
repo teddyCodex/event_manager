@@ -1,0 +1,41 @@
+h1 {
+  font-size: 3vw;
+  color: #a084e8;
+}
+body {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  width: 300px;
+  height: 30px;
+}
+
+button {
+  width: 200px;
+  background: #2b2d2f;
+  text-align: center;
+  align-self: center;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-top: 30px;
+  padding: 15px 30px;
+  font-family: "Lilita One", cursive;
+  font-size: 20px;
+  color: #a084e8;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+.error {
+  color: #a084e8;
+}
