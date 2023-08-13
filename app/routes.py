@@ -150,8 +150,8 @@ def guest_list():
     if request.method == "POST":
         entered_password = request.form["password"]
         if entered_password == correct_password:
-            # return render_template("guest_list.html")
-            return redirect(url_for("guest_list.html", guest_name=guest_name))
+            return render_template("guest_list.html", guest_name=guest_name)
+            # return redirect(url_for("guest_list.html", guest_name=guest_name))
         else:
             return render_template(
                 "protected_page.html",
