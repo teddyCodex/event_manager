@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Access Protected Page</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='protected_page.css') }}"
+    />
+  </head>
+  <body>
+    <h1>Enter Password to Access Guest List</h1>
+    <form action="{{ url_for('guest_list') }}" method="post">
+      <input type="password" id="password" name="password" required />
+      <button type="submit">Access</button>
+    </form>
+    {% if error_message %}
+    <p class="error">{{ error_message }}</p>
+    {% endif %}
+    <script>
+      const urlParams = new URLSearchParams(window.location.search);
+      const guestName = urlParams.get("guest_name");
+      sessionStorage.setItem("guestName", guestName);
+    </script>
+  </body>
+</html>

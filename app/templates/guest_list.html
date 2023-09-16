@@ -26,6 +26,10 @@
     </div>
     <button class="buttons" id="searchButton">Search</button>
     <ul class="guest-list" id="guestList"></ul>
+    <script>
+      const guestName = sessionStorage.getItem("guestName");
+      document.getElementById("searchInput").value = guestName;
+    </script>
     <script src="{{ url_for('static', filename='guest_list.js') }}"></script>
   </body>
 </html>

@@ -61,14 +61,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Event listener for suggestion click
-  // suggestionList.addEventListener("click", function (event) {
-  //   if (event.target.tagName === "LI") {
-  //     selectedSuggestion = event.target.textContent;
-  //     searchInput.value = selectedSuggestion;
-  //   }
-  // });
-
   // Event listener for search input
   searchInput.addEventListener("input", function () {
     const inputValue = searchInput.value.trim();
@@ -84,13 +76,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  const params = new URLSearchParams(window.location.search);
-  const guestName = params.get("guest_name");
-
-  // Populate the search input box with guest name
-  if (guestName) {
-    searchInput.value = guestName;
-  }
+  // const params = new URLSearchParams(window.location.search);
+  // const guestName = params.get("guest_name");
 
   // Function to scroll to the position of a guest name in the guest list
   function scrollToGuest(guestName) {

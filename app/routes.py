@@ -1,6 +1,7 @@
 from flask import render_template, request, redirect, url_for, jsonify, send_file
 from app import db, app
 from sqlalchemy import or_, func
+from flask_login import LoginManager, UserMixin, login_user, login_required
 
 
 class Guest(db.Model):
@@ -138,9 +139,32 @@ def verify_guest_manual():
 
 
 # ------------------------------VIEW GUEST LIST---------------------------------------#
-@app.route("/guest_list")
+@app.route("/actual_guest_list")
+def actual_guest_list():
+    guest_name = request.args.get("guest_name")
+    print(f"Guest Name in actual_guest_list: {guest_name}")
+    return render_template("guest_list.html", guest_name=guest_name)
+
+
+@app.route("/guest_list", methods=["GET", "POST"])
 def guest_list():
-    return render_template("guest_list.html")
+    # Hardcoded password for demonstration purposes (You can replace it with a more secure method)
+    correct_password = "Emengini"
+    guest_name = request.args.get(
+        "guest_name"
+    )  # Get the guest name from the URL parameters
+    print(f"Guest Name in guest_list: {guest_name}")
+    if request.method == "POST":
+        entered_password = request.form["password"]
+        if entered_password == correct_password:
+            return redirect(url_for("actual_guest_list", guest_name=guest_name))
+        else:
+            return render_template(
+                "protected_page.html",
+                error_message="Incorrect password. Please try again.",
+            )
+
+    return render_template("protected_page.html")
 
 
 @app.route("/get_guest_list")
