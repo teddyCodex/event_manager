@@ -149,7 +149,7 @@ def actual_guest_list():
 @app.route("/guest_list", methods=["GET", "POST"])
 def guest_list():
     # Hardcoded password for demonstration purposes (You can replace it with a more secure method)
-    correct_password = "Emengini"
+    correct_password = "password"
     guest_name = request.args.get(
         "guest_name"
     )  # Get the guest name from the URL parameters
