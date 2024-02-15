@@ -5,7 +5,7 @@ from flask_sqlalchemy import SQLAlchemy
 app = Flask(__name__)
 app.config[
     "SQLALCHEMY_DATABASE_URI"
-] = "postgresql://guest_manager_db_user:SNOPJ7lb5WwXbnUuNXk9NvrFeLO8XbKk@dpg-cjb29rrbq8nc73b1iopg-a/guest_manager_db"
+] = "postgres://postgres.lpvniqvdyqnbtadkijyf:!Tunerwell007@aws-0-us-east-1.pooler.supabase.com:5432/postgres"
 db = SQLAlchemy(app)
 
 from app import routes
